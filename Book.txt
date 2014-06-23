@@ -1,1 +1,14 @@
-intro.txt
+front.md
+introduction.md
+setup.md
+gametheory.md
+ourgame.md
+gamescaffold.md
+assets.md
+gameloop.md
+input.md
+dressingup.md
+levels.md
+appmanager.md
+marketplace.md
+back.md
