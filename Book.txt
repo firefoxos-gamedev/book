@@ -4,6 +4,7 @@ setup.md
 gametheory.md
 ourgame.md
 gamescaffold.md
+initialization.md
 assets.md
 gameloop.md
 input.md
