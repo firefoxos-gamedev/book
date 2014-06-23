@@ -73,6 +73,23 @@ This HTML does nothing besides giving us a place to hold our canvas and includin
 
 A>*Tip:* Using ```defer``` on the script tags will give us better performance since the JS files will only be executed after the DOM is ready.
  
-## Some Javascript
+## Our Application Manifest
 
-## Planning For Development
+Create a file called **manifest.webapp** next to the **index.html** in the foxnoid folder containing the following:
+
+<<[Minimal index.html](code/foxnoid/manifest.webapp)
+
+This is the minimum data needed to start our game development process. Be aware that before submitting to the [Firefox Marketplace](http://marketplace.firefox.com) we'll add some things to this file like icons. We'll talk more about icons and static resources in the chapter about assets.
+
+## Summary
+
+Your Foxnoid folder should look like this now:
+
+![Foxnoid folder](images/originals/foxnoid-folder-scaffold.png)
+
+If it doesn't then you can always fetch the Foxnoid source from [the Foxnoid repository on Github](https://github.com/firefoxos-gamedev/foxnoid-html5-game) just be aware that the version on github is a lot more complete than the one we have now.
+
+Right now you should have a folder with some files that we'll serve as a starting point for our game development. You should also know a bit about application types and manifests.
+
+On the next chapter we'll do some Javascripting to initialize our game.
+
