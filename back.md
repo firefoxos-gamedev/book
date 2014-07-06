@@ -20,6 +20,7 @@
 
 * [The Art of Game Design: A book of lenses](http://www.amazon.com/gp/product/0123694965/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0123694965&linkCode=as2&tag=andregacom02-20&linkId=3A6K4FN3GZ3AVW3K): In my personal opinion this is **the best book about game design ever created** and I don't mean this lightly. This book provides you with mental tools and workflows useful in any game related creative process. It teaches you how to organize yourself and think about your game from the perspective of many *lenses*. It is a wonderful experience. This is really recommended.
 * [Level Up!: The Guide to Great Video Game Design](http://www.amazon.com/gp/product/047068867X/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=047068867X&linkCode=as2&tag=andregacom02-20&linkId=TBDQTMA7QTIX4JOD): A great book focused on video games design. Very easy to understand and appreciate. Clear explanations and ideas.
+* [Discover Phaser](http://www.discoverphaser.com/): A really good book focused on teaching the Phaser Framework by Thomas Palef who is a leading member of the Phaser community. He developed many games and his content is solid. There are package deals available for this book that includes more sample games. I really recommend it. 
 
 # Appendix 4: Firefox OS Related Links
 

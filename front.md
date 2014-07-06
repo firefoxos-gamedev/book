@@ -43,6 +43,8 @@ This book is targeted at Game Development but there are other books and resource
 * [Beginning Firefox OS HTML5 Game Programming](http://www.amazon.com/dp/B00IZUYIGO): Bob Thulfram has released this awesome book on Amazon. If you want more resources about Game Development on Firefox OS you need to check this one out.
 * [Firefox OS Gaming Blog](http://firefoxosgaming.blogspot.co.uk/): Bob Thulframs blog about Firefox OS Gaming. After you start creating games you will probably see your creations featured here :-)
 
+There is now a site that lists all known books related to Firefox OS at [http://firefoxosbooks.org](http://firefoxosbooks.org).
+
 ## How this book came to be
 
 This book is a sibling to the [Quick Guide for Firefox OS Development](https://leanpub.com/quickguidefirefoxosdevelopment/) which is a similar book that cover making apps for Firefox OS. After releasing that book and talking to many people, I though we needed a similar resource targeting game development since that is often one of the overlooked aspects of developer documentation. This book shares some content with the quick guide.
@@ -79,7 +81,7 @@ If you want to help improve the content of this book, please see the Feedback & 
 
 ## Cover Illustration
 
-The cover is being done but its not ready yet...
+The cover page was created by Raphael Eckhardt, a designer and illustrator from Brazil. You can check out his work and contact him (he is a freelancer) at [http://raphaeleckhardt.com/](http://raphaeleckhardt.com/).
 
 ## Who should read this book
 

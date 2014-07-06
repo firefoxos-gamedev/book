@@ -94,6 +94,7 @@ For the curious we'll list some resources for Phaser below:
 * [Phaser Documentation](http://docs,phaser.io).
 * [Phaser Online Samples](http://examples.phaser.io).
 * [Phaser Source on GitHub](https://github.com/photonstorm/phaser).
+* [Discover Phaser Book](http://www.discoverphaser.com/): A really good book focused on teaching the Phaser Framework by Thomas Palef who is a leading member of the Phaser community. He developed many games and his content is solid. There are package deals available for this book that includes more sample games. I really recommend it.
 
 ## Summary
 
