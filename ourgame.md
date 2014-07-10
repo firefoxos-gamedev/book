@@ -80,7 +80,7 @@ Even so Phaser is not a silver bullet[^silverbullet]. Some games are best served
 
 [^silverbullet]: when Java developers face a problem and start throwing more and more XML at it hoping it will resolve itself.
 
-Like the hammer analogy from above, the hammer isn't all that important. I have an electric screwdriver that has a LED light and is really handy. It helps me a lot but I could do the same job slower with a normal screwdriver and a flashlight. Tools are great when they help you but you can build great things regardless of them. **The most important tool of the Game Design is the Game Designer**.
+Like the hammer analogy from above, the hammer isn't all that important. I have an electric screwdriver that has a LED light and is really handy. It helps me a lot but I could do the same job slower with a normal screwdriver and a flashlight. Tools are great when they help you but you can build great things regardless of them. **The most important tool of Game Design is the Game Designer**.
 
 Phaser is indeed a great tool and it will help us a lot just don't think it is the only way forward or that you're doing something wrong if you like something else. Use Phaser for this book, see if you like it. Go fishing for other solutions afterwards and select something that feels right to you (... I bet you will keep using Phaser).
 
