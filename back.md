@@ -9,7 +9,7 @@
 * [Firefox OS](http://www.mozilla.org/pt-BR/firefox/os/)
 * [WebAPI on Mozilla Wiki](http://wiki.mozilla.org/WebAPI) 
 
-# Appendix 2: Javascript Books
+# Appendix 2: Javascript Books {#jsbooks}
 
 * [JavaScript: The Good Parts](http://shop.oreilly.com/product/9780596517748.do): The JavaScript Book.
 * [JavaScript Patterns](http://shop.oreilly.com/product/9780596806767.do): Patterns and best practices.

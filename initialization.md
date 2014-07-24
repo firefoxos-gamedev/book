@@ -46,7 +46,7 @@ We're going to talk much more about game states as we build Foxnoid. Since we're
 
 ### Foxnoid game states
 
-Foxnoid is a game in the tradition of Arkanoid. Its a classic arcade game like Pacman, Pong, Tetris and others. These games can be planned in the following manner:
+Foxnoid is a game in the tradition of Arkanoid. Its a classic arcade game like Pacman, Pong, Tetris and others. Lets plan the states used in our game.
 
 {title="Foxnoid Game States"}
 | Name          | Responsible for   |
@@ -56,10 +56,77 @@ Foxnoid is a game in the tradition of Arkanoid. Its a classic arcade game like P
 | GameWin       | When the user wins the game |
 | GameOver      | When the user loses it |
 
-Test
+As you can see we're going to have four states in Foxnoid. The first one will load our assets and then switch to the game. The user will play the game and depending on the outcome we'll switch to Game Win or Game Over state.
+
+The remaining of this chapter we'll be about what should happen before we're able to switch to the **preload** state. There is some initialization that needs to be done prior to start loading assets.
 
 ## What Should Our Initialization Handle?
 
+Out initialization code should handle everything that is needed before we can start switching between the states. It should load all libraries needed for our game to work (in our case just Phaser) and initialize them. The rest is up to each state.
+
 ## Initializing Phaser
 
+Lets create a file called **init.js** inside the **js** folder.
+
+{lang="js", title="init.js: is responsible for initializing Phaser", line-numbers=on}
+~~~~~~~~
+var GameStates = {}; // <-- Object to hold all our game states.
+
+document.addEventListener("DOMContentLoaded", function()  {
+
+    // Create your Phaser game and inject it into the game div.
+    // For more information regarding the Phaser Game object refer to:
+    // http://docs.phaser.io/Phaser.Game.html
+
+    // Portrait game orientation. 
+
+    var width = 320;
+    var height = 480;
+
+    var game = new Phaser.Game(width, height, Phaser.CANVAS, "game");
+
+});
+~~~~~~~~
+
+On line 01 we create an empty object. This will be used to hold all our game states, this way instead of having four different globals around we're going to have only one.
+
+A>**Disclaimer:** Yes, I could use an immediate function and have no globals at all but this is a beginner oriented book and I don't want lose precious pages explaining about closures and nameless functions that invoke themselves. 
+A>
+A>That being said, those that understand those features can clearly see how easy it would be to use them here. Just surround that init file and be happy. For those that have no clue what I am talking about but would like to know more then check out [Appendix 2: Javascript Books](#jsbooks) for some reference material.
+
+From line 03 to 17 we have the ```DOMContentLoaded``` event handler function. This will be executed once all the DOM is loaded. Its inside this handler that our game initialization happens. At this moment, initializing our game is basically loading Phaser and instantiating the the ```game``` variable. This game variable is the main object that is used to access the features from Phaser. You can learn more about it at [the documentation for the Phaser Game Class](http://docs.phaser.io/Phaser.Game.html).
+
+We call ```Phaser.Game()``` on line 14 passing four parameters to it. The first two are the dimensions for the canvas used in our game. We can think of it as the size of our desired screen. Phaser can work with both Canvas and WebGL renderers but the later is not well supported on mobile devices so for casual 2D games, I recommend sticking with Canvas. The fourth parameter is the id of the DOM element that will hold the canvas. Once that line is executed Phaser will initialize a canvas object inside the element specified. 
+
+Even though we created the **init.js** file, we haven't included it on our **index.html** file yet. Lets do it.
+
+{lang="html", title="index.html: including our init.js file", line-numbers=on}
+~~~~~
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Foxnoid Game</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script defer src="js/phaser.min.js"></script>
+        <script src="js/init.js"></script>
+    </head>
+    <body>
+
+        <div id="game"></div>
+
+    </body>
+</html>
+~~~~~
+
+If we open our **index.html** on our browser now, we'll see a black screen. Thats the canvas working but since it has nothing to do it stays black.
+
+![Black screen means good](images/originals/initialization/black.png)
+
+The above screenshot is all black because our canvas is black and our background color in the HTML is also black. Now after that initialization we can begin working on our game states.
+
 ## Summary
+
+In this chapter we explained about game states and how we can use them to organize our game into manageable bits by placing logical stuff together. We decided on building four states for the Foxnoid game and we've reached a point where we have a black screen.
+
+On the next chapter we're going to build our **preload** game state and load our resources.

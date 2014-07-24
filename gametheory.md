@@ -1,22 +1,22 @@
-# Game Theory & Practice {#gametheory}
+# About Games {#gametheory}
 
 There are lots of books about game development that doesn't bother to define what a game is because they assume everyone already knows. If you stop to think about it there is a great chance that you know what a game is but you can't really define it. The boundaries between activity, play and game are very fuzzy.
 
-Lets think of an activity first. Lots of things are activities. Your job is an activity. Eating and breathing are activities. Some activities are more fun than others. Some people enjoy fishing but is fishing a play? is it a game? 
+Lets think of an activity first. Lots of things are activities. Your job is an activity. Eating and breathing are activities. Some activities are more fun than others. Some people enjoy fishing but is fishing a play? is it a game?
 
 ## What Are Games Anyway?
 
-What differentiates a playful activity from a game? Some people say that *World of Warcraft* is not a game but a full time job and not really a game, others are having terrible fun playing it. Defining what is a game is tricky. 
+What differentiates a playful activity from a game? Some people say that *World of Warcraft* is not a game but a full time job and not really a game, others are having terrible fun playing it. Defining what is a game is tricky.
 
 Lets pick an activity first, something simple such as throwing rocks into the sea. For it to go from activity to playful activity means I need to be enjoying it. I like skipping stones, I think of it as a playful activity. Now what I would need to do to convert my playful activity of skipping stones into a game?
 
 Games usually have rules. Rules are what make possible to go from a playful activity towards something that you can win or lose. Usually all games have rules and some way to win and or lose. If you think in these terms lots of things become games. If you enjoy your job and it has rules and goals then it can be approached as a game.
 
-Why are we doing this exercise anyway? Because if we can make the definition of what is a game something less fuzzy we can understand better our projects. Lots of games these days focus on trivia such as having better and better graphics but very few are exploring new mechanics and new ways to approach gaming. 
+Why are we doing this exercise anyway? Because if we can make the definition of what is a game something less fuzzy we can understand better our projects. Lots of games these days focus on trivia such as having better and better graphics but very few are exploring new mechanics and new ways to approach gaming.
 
 There are lots of trusted formulas when it comes to game design and you can follow them and make something exceptional such as Angry Birds did. You can also travel thru paths that are not usually visited and create something original and wonderful. No matter what you do, your ability to deliver a good game can be broken if you begin by ignoring the game design process.
 
-[Thomas Was Alone](http://www.mikebithellgames.com/thomaswasalone/) has simple graphics and simple mechanics but its story and method of delivery are so original and the theme reinforcement so well crafted that you can't help but be enthralled by the atmosphere of the game. While at a first impression you may think of it as just a blocky puzzle/platformer it is actually a wonderful story about friendship. 
+[Thomas Was Alone](http://www.mikebithellgames.com/thomaswasalone/) has simple graphics and simple mechanics but its story and method of delivery are so original and the theme reinforcement so well crafted that you can't help but be enthralled by the atmosphere of the game. While at a first impression you may think of it as just a blocky puzzle/platformer it is actually a wonderful story about friendship.
 
 ## What Makes a Good Game?
 
@@ -62,7 +62,7 @@ The idea is to carry your notebook with you and write down all your game design 
 
 A>Cool Tech: The Field Notes Expedition Edition is **waterproof** as shown in [TEST 1: WATERPROOF](http://vimeo.com/55133541&autoplay=1). Now you can take it to the shower and never ever lose a good idea again. How many genius ideas were lost after shower because you could not write them down... never again!
 
-I tend to write down the main game idea and then do some really bad sketches. I often write down interesting mechanics. Whenever I see something cool that might be useful later, I also write it down. 
+I tend to write down the main game idea and then do some really bad sketches. I often write down interesting mechanics. Whenever I see something cool that might be useful later, I also write it down.
 
 If you keep this going, you will see that your mind is an endless fountain of ideas. Separating the good ideas from the bad ones is beyond the scope of this book and left as an exercise to the reader (I hated when my math books said something similar...). Anyway, that was just a joke, you should pick some of ideas regardless if they appear to be good or bad and try to implement some proof-of-concept toys just to test them out with friends and random strangers (excuse me, do you have a minute to talk about game design principles?).
 
@@ -75,4 +75,3 @@ Since this is a small book and we don't have much time lets cheat and use a prov
 The most important part of this chapter are the book references and the game design journal exercise. Forget all the jokes and do yourself a favor by maintaing that journal and investing some good money on those books above. This book you are reading now is free (and open source) so use the money you saved to invest in the good education provided by them.
 
 In the next chapter we'll begin the design and implementation of our game.
-
