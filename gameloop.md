@@ -60,7 +60,7 @@ From now on, instead of pasting the whole **game.js** file, I am going to place 
 
 ### Adding the player
 
-Remember that you need to place commas between the functions. So when you add the function below remember that comma.
+Remember that you need to place commas between the methods. Add the method below to the ```GameStates.Game``` object. 
 
 {lang="js", title="game.js: the addPlayer() function", line-numbers=on}
 ~~~~~
@@ -68,7 +68,7 @@ addPlayer: function () {
     // Add the player
     this.player = this.add.sprite(160, 440, 'player');
     this.physics.arcade.enable(this.player);
-    this.player.anchor.setTo(0.5, 0); //center anchor/origin to the middle of the paddle
+    this.player.anchor.setTo(0.5, 0);
     this.player.enableBody = true;
     this.player.body.immovable = true;
     this.player.body.collideWorldBounds = true;
@@ -195,7 +195,7 @@ Below we implement the callback.
 ballCollidesWithBlock: function(sprite, block) {
     console.log("Collided with block!");
     block.kill();
-},
+}
 ~~~~~
 
 The callback receives two parameters which are the sprites that collided. The first one will be our player sprite and the second is the block the player hit. All we do is ```kill()``` the sprite. There are two functions used to remove a sprite from the game, they are ```kill()``` and ```destroy()```, they have different mechanics. The kill one will really destroy and remove the sprite from the game. The destroy one will remove it from the game but keep it in memory to be reused which is useful when you're also using a sprite pool which will allow you to have many sprites being created and destroyed without performance penalty. This is important for shooter games for example. In our case we don't need this stuff.
@@ -226,14 +226,13 @@ resetBall: function() {
 }
 ~~~~~
 
-Now lets implement our collision check:
+Now lets implement our player losing check:
 
 {lang="js", title="game.js: the ballCollidesWithBlock() function", line-numbers=on}
 ~~~~~
 ballCollidesWithGround: function() {
     if (this.ball.y >= 470) {
         this.playerLives -= 1;
-        console.log(this.ball.y);
         this.resetBall();
     }
 
@@ -244,12 +243,13 @@ ballCollidesWithGround: function() {
     this.livesDisplay.setText("Lives: " + this.playerLives);
 
     if (this.playerLives === 0) {
-        this.state.start("GameOver");
+        // There will be a game over state here soon...
     }
 
 }
 ~~~~~
 
+So if the ball is below the player paddle which is at 440px then we subtract a life from the player and reset the ball to the original position. 
 
 ### How to move the player?
 
