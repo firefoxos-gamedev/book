@@ -14,6 +14,4 @@
 
 ### Handling Keyboard
 
-### Handling Gamepad
-
 ## Summary
