@@ -251,6 +251,27 @@ ballCollidesWithGround: function() {
 
 So if the ball is below the player paddle which is at 440px then we subtract a life from the player and reset the ball to the original position. 
 
-### How to move the player?
+### The update() function
+
+The ```update()``` then becomes very easy to follow. At each loop it checks the necessary collisions and the movement physics are handled by Phaser Arcade library.
+
+{lang="js", title="game.js: the ballCollidesWithBlock() function", line-numbers=on}
+~~~~~
+update: function() {
+    this.checkHitWithBlocks();
+    this.checkHitWithPlayer();
+    this.ballCollidesWithGround();
+}
+~~~~~
+
+A> **Notice:** From this chapter onwards I am placing the final code for the given chapter at an appendix at the end of the book. This will make it easier to check for mistakes and have a clear picture of what we've accomplished.
+A>
+A> The code for this chapter is on [Appendix 5: Gameloop Chapter Code](#appendix-gameloop) and also in its own folder with the code package that is bundled with the book. 
+
+### What about controlling the player?
+
+We're devoting the next chapter to the business of game controls. This was done because this chapter was too long and there is too much to talk about the topic even though the implementation will be trivial.
 
 ## Summary 
+
+If we open our **index.html** on our web browser now we're going to see the game working and the player loosing lives since you can't control it yet. Lets move along to the next chapter to make this game playable!
