@@ -1,0 +1,11 @@
+{
+    "version": "0.1",
+    "name": "Foxnoid",
+    "description": "A game for Firefox OS",
+    "launch_path": "/index.html",
+    "developer": {
+        "name": "Andre Alves Garzia",
+        "url": "http://andregarzia.com"
+    },
+    "installs_allowed_from": ["*"]
+}
