@@ -26,9 +26,59 @@ Our main objective here is simulating and displaying the world. Lets break down 
 
 All the stuff about positioning things should happen on the ```create()``` function of the state which is run once when the state is created. All the moving and collision things should happen on the ```update()``` function which is the one that is called repeatedly once a game state is active. 
 
-## Initializing our world
+Create a file called **game.js** inside the **js folder** and lets begin coding. 
 
-Create a file called **game.js** inside the js folder and lets begin coding. 
+### Changing index.html
+
+Now that we have **game.js** ready we need to change our **index.html** file to include it.
+
+{lang="js", title="index.html: now includes our game state", line-numbers=on}
+~~~~~
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Foxnoid Game</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script defer src="js/phaser.min.js"></script>
+        <script src="js/init.js"></script>
+        <script defer src="js/preload.js"></script>
+        <script defer src="js/game.js"></script>
+    </head>
+    <body>
+
+        <div id="game"></div>
+
+    </body>
+</html>
+~~~~~
+
+After including that file in the HTML we need to register the state in **init.js** as seen here:
+
+{lang="js", title="init.js: with the new game state", line-numbers=on}
+~~~~~~~~
+var GameStates = {}; // <-- Object to hold all our game states.
+
+document.addEventListener("DOMContentLoaded", function()  {
+
+    // Portrait game orientation. 
+
+    var width = 320;
+    var height = 480;
+
+    var game = new Phaser.Game(width, height, Phaser.CANVAS, "game");
+    
+    // Add the Game States the game has.
+    game.state.add('Preloader', GameStates.Preloader);
+    game.state.add('Game', GameStates.Game);
+    
+    // Now start the Preloader state.
+    game.state.start('Preloader');
+
+});
+~~~~~~~~
+
+## Initializing our world
 
 [Phaser Game States](http://docs.phaser.io/Phaser.State.html) as explained in the [initialization chapter](#initialization) have different functions that we can implement to suite our game loop workflow. To initialize the world we'll implement the ```create()``` function that is run once when the state starts. We're not going to implement this initialization as a single continuous block of code because it will be tedious and harder to understand. Instead we're going to build tiny functions that will be called from ```create()```.
 
@@ -249,7 +299,7 @@ ballCollidesWithGround: function() {
 }
 ~~~~~
 
-So if the ball is below the player paddle which is at 440px then we subtract a life from the player and reset the ball to the original position. 
+So if the ball is below the player paddle which is at 440px then we subtract a life from the player and reset the ball to the original position.
 
 ### The update() function
 
