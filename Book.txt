@@ -1,6 +1,7 @@
 front.md
 introduction.md
 setup.md
+appmanager.md
 gametheory.md
 ourgame.md
 gamescaffold.md
@@ -10,7 +11,6 @@ gameloop.md
 input.md
 dressingup.md
 levels.md
-appmanager.md
 marketplace.md
 back.md
 appendix_gameloop.md

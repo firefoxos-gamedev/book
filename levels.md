@@ -78,7 +78,7 @@ var levels = [
 
 Now lets include this file in our HTML.
 
-{lang="js", title="index.html: now includes our game win state", line-numbers=on}
+{lang="html", title="index.html: now includes our game win state", line-numbers=on}
 ~~~~~
 <!DOCTYPE html>
 <html>

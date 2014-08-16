@@ -176,7 +176,7 @@ GameStates.Preloader = {
 
 And create a file **game_win.js** in the **js folder**. We need to register this new game state in **init.js** and add it to the **index.html**.
 
-{lang="js", title="index.html: now includes our game win state", line-numbers=on}
+{lang="html", title="index.html: now includes our game win state", line-numbers=on}
 ~~~~~
 <!DOCTYPE html>
 <html>

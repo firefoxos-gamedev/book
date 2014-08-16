@@ -4,7 +4,7 @@
 
 ![Early Releases Change Often](images/originals/early.png)
 
-**This is a work in progress. You're handling an early release of an unfinished book**
+**This is a work in progress. You're handling an early release of an unfinished book.**
 
 Pick a bucket of LEGO pieces and throw them randomly on the floor. Now blindfold yourself and spin 20 times and start walking around. This is the type of danger you're facing here. Content will change and feedback is more than welcome.
 
