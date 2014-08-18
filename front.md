@@ -57,6 +57,10 @@ This book is distributed for **free** using [Leanpub](http://leanpub.com).
 
 You can register your email to receive automatic updates when you download this book from its [book page at Leanpub](http://leanpub.com/buildinggamesforfirefoxos). The plan is to update this book monthly. If you got this book from a friend or from some other site, you should consider going to the page above to download and register there thus making sure you will receive the update notices.
 
+## Source code
+
+The Foxnoid game source code is available on [its Github Repo](https://github.com/firefoxos-gamedev/foxnoid-html5-game). You should fetch it.
+
 ## Donations
 
 Writing a book requires a lot of work and I would like to dedicate more time in my life for this type of activity after the 2014 Google Summer of Code is done. Those that think that this book is useful (or cool) may move the price slider on Leanpub download page from zero to any desired amount and give me some bucks.
