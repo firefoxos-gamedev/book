@@ -2,11 +2,17 @@
 
 ![Firefox OS Simulator Dashboard](images/originals/app-manager-showing-memos.png)
 
-We've setup the Simulator in [the chapter about preparing the environment](#setup) and we used it on the [chapter about building our first app](#firstapp). Now we're going to take a deeper look into the App Manager features and learn how to do the most common tasks.
+In this chapter we're going to learn the basics about the App Manager. By the end of it we'll know how to use it to test our apps.
 
 To learn more about it, check out [the Firefox OS: Using the App Manager page](https://developer.mozilla.org/docs/Mozilla/Firefox_OS/Using_the_App_Manager) on MDN.
 
-W> Remember: that if you are using a device running Firefox OS 1.1 or older then you need to use the Firefox OS 1.1 Simulator extension with it and not the App Manager. This Simulator is explained in the next chapter.
+W> Remember: that if you are using a device running Firefox OS 1.1 or older then you need to use the Firefox OS 1.1 Simulator extension with it and not the App Manager.
+
+This chapter is best understood if you take the time to follow the steps with a sample app. Lets use the game we're going to build as a sample app for this task. Download it from [the Foxnoid Github repository](https://github.com/firefoxos-gamedev/foxnoid-html5-game).
+
+## Launching The App Manager
+
+To open the App Manager select the **Tools** menu on Firefox and navigate to the **Web Developer** item. Inside that item select the **App Manager**. If you're not seeing the App Manager entry there then you're probably running an old Firefox version and should upgrade.
 
 ## Adding Apps
 
@@ -14,13 +20,13 @@ You can add both hosted and packaged apps to the App Manager. Lets see how to ad
 
 ### Adding packaged apps
 
-You already saw how to add packaged apps to the App Manager during [our first app creation](#firstapp), but we're going to do a recap so I can show you what else is possible.
-
 To add a new packaged application click the **Add Packaged App** button on the **App Manager Dashboard** as shown in the screenshot below.
 
 ![Showing the *Add Packaged App* option that adds a packaged app to the App Manager](images/originals/app-manager-add-packaged-app.png)
 
 When you click on the button highlighted on the image, Firefox opens a file selection dialog. You should browse your hard drive and select the **folder that contains the manifest file** for the application that you want to add to the App Manager. If there are no issues with your manifest then your app will be addes to the list on screen.
+
+If you're following with the Foxnoid sample game, then navigate to the folder that contains the game and select the file called **manifest.webapp**.
 
 ### Adding hosted apps
 
@@ -36,7 +42,7 @@ After clicking the button, the manifest is verified and if it is correct the app
 
 ## Running your app
 
-To run your application click the **Start Simulator** button. After that you will be able to select which of the installed Simulator you want to run.
+To run your application click the **Start Simulator** button. After that you will be able to select which of the installed Simulator you want to run. If there is no simulator installed then you will see an option to install one.
 
 Once you have a Simulator running you can click the **Update** button inside your application listing and it will install the app on the running Simulator.
 
@@ -64,7 +70,7 @@ Once your app is running well on the simulator it's time to test on a real devic
 
 Nothing replaces testing on a real device. On the simulator, you test things by using a mouse and clicking on a computer screen; while on a real device you use your fingers on a touchscreen and by using physical buttons. Its a very different user and development experience.
 
-As an example why this type of testing matters, let me tell you a brief story: Some years ago, Raphael Eckhardt (the designer who created the cover of this book) and I were building a puzzle game not that disimilar to Bejeweled. Our game involved dragging and dropping some pieces on a board and was working pretty well on the simulator.
+As an example why this type of testing matters, let me tell you a brief story: Some years ago, Raphael Eckhardt (the designer who created the cover of this book) and I were building a puzzle game not that dissimilar to Bejeweled. Our game involved dragging and dropping some pieces on a board and was working pretty well on the simulator.
 
 When we then tested the game on an actual phone we realized our game components were not touch friendly at all. When placing a hand over the screen the board would vanish behind the hand. Even worst, the pieces the users were supposed to drag were smaller than the user's finger tip, so the user couldn't see what they were doing! In summary, our UX sucked very badly. That happened because we kept trying things only on the simulator using a mouse that had a tiny cursor. When we decided to try with our fatter-than-a-cursor fingers we realized that we need to rework our UI.
 
@@ -84,6 +90,4 @@ In summary, the App Manager is fantastic. Its much better than the old Firefox O
 
 Besides feeling awesome and empowered, by this point in the book you hopefully have a good grasp of the workflow for building apps for Firefox OS.
 
-In the next chapter we'll talk about the old Firefox OS 1.1 Simulator Extension. This is the only way to connect to devices running Firefox OS 1.1. The chapter is really similar to this one. Actually its the same content but adapted for the different UI.
-
-After the Simulator chapter, we'll talk about distributing your application.
+In the next chapter we're going to talk about games! :D

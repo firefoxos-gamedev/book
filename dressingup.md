@@ -2,9 +2,9 @@
 
 Foxnoid is now a playable game but you can't win it (or lose it). In this chapter we're going to solve that by adding both the game win and game over mechanics.
 
-We're going to use two new game states one for each type of ending. Once each situation happens we're going to switch to that state. Game states are useful for many things but one special use that they excel at is when the nature of what is happening on your game changes. In the game over situation the player was playing the game but lost it and is no longer able to play, this fundamental difference from the previous situation is easily crafted with game state switches.
+We're going to use two new game states one for each type of ending. Once each situation happens we're going to switch to the needed state. Game states are useful for many things but one special use that they excel at is when the nature of what is happening on your game changes. In the game over situation the player was playing the game but lost it and is no longer able to play, this fundamental difference from the previous situation is easily crafted with game state switches.
 
-Winning and losing are important aspects of games. You can create games with just one of these items. A game with no winning scenario is a game where winning is basically seeing how long you can last before losing. Games without a losing scenario option are common these days, specially on mobile. Games where you can play forever until you win or even in some gredy cases pay-to-win games where you can spend real money to advance a level or buy upgrades.
+Winning and losing are important aspects of games. You can create games with just one of these items. A game with no winning scenario is a game where winning is basically seeing how long you can last before losing. Games without a losing scenario option are common these days, specially on mobile. Games where you can play forever until you win or even in some cases pay-to-win games where you can spend real money to advance a level or buy upgrades.
 
 Flappy Bird is a game without a win scenario (or at least I don't know about it). Basically these type of games work really well if they are hard and use leaderboards where players can compete with each other to have the best score. 
 
