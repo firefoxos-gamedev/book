@@ -77,5 +77,5 @@ I hope you enjoyed this quick guide. I plan to update and expand this guide ofte
 
 Please send me feedback. I can be reached for feedback on my Twitter account at [@soapdog](http://twitter.com/soapdog) and over email at [fxosgameguide@andregarzia.com](mailto:fxosgameguide@andregarzia.com). My home page is at [http://andregarzia.com](http://andregarzia.com).
 
-Now that you're a part of the group of Firefox OS app creators, come be a part of the greater Mozilla community: Help keep the web free and open made by users for users. Join us at [http://www.mozilla.org/contribute/](http://www.mozilla.org/en-US/contribute/) and help Firefox OS grow!
+Now that you're a part of the group of Firefox OS game creators, come be a part of the greater Mozilla community: Help keep the web free and open made by users for users. Join us at [http://www.mozilla.org/contribute/](http://www.mozilla.org/en-US/contribute/) and help Firefox OS grow!
 
