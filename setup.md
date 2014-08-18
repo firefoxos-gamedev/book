@@ -15,10 +15,6 @@ To develop and test apps made for Firefox OS you will need:
  * The [Firefox OS Simulator](https://addons.mozilla.org/en-US/firefox/addon/firefox-os-simulator/) if you're running a device with Firefox OS 1.1.
  * A text editor for programming[^editors].
 
-Be aware that the **Firefox OS Simulator is made to work with devices running Firefox OS 1.0 up to 1.1, devices running Firefox OS 1.2+ will be tested using the App Manager** which we will talk more later.
-
-When this book was first written **Firefox OS 1.1** was current and the official way of testing things was with the **Firefox OS 1.1 Simulator**. Mozilla is now transitioning to the new **App Manager** which is much better than the old simulator but unfortunately not able to connect to Firefox OS 1.1 devices.
-
 Since there are a lot of people running Firefox OS 1.1 and most of the devices sold in the retails market are still 1.1 devices we'll keep the **Firefox OS 1.1 Simulator** instructions but we'll duplicate any section related to that simulator and also present how to do the same tasks in the **App Manager**. I will present the **App Manager** content first because thats the current stuff and then present the content for the old simulator.
 
 The **App Manager** is bundled with **Firefox 29 or newer**. We'll describe it in detail on [the chapter about App Manager](#appmanager).
@@ -71,4 +67,4 @@ Alternatively, you can navigate to the [Firefox OS Simulator](https://addons.moz
 
 In this chapter we learned that all we need to develop for Firefox OS is the Firefox browser, the App Manager and Firefox OS Simulators (and a good text editor).
 
-Now that we have setup all the tools we need, its time to dive into our proper game making as we talk about our game project for this book in the next chapter.
+Now that we have setup all the tools we need, its time to dive into the App Manager and learn how it work.

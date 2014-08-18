@@ -16,10 +16,10 @@ In this chapter we're going to build part of this beating mechanism. We're going
 
 The game loop will be built as its own Game State. In the previous chapter we've built a state to load our assets so that they would be ready to be used by this state that we're going to build now.
 
-Our main objective here is simulating and displaying the world. Lets break down our simulation part and take note on what do we need to simulate:
+Our main objective here is simulating and displaying the world. Lets break down our simulation part and take note on what do we need.
 
 * **Ball moving:** The ball should keep moving.
-* **Ball collision with wall:** If we think the smartphone display has four walls then the ball should collide with them and bounce back so not to leave the screen.
+* **Ball collision with the walls:** If we think the smartphone display has four walls then the ball should collide with them and bounce back so not to leave the screen.
 * **Blocks positioning:** Our blocks should be positioned as a grid when the game start.
 * **Ball collision with blocks:** The ball should collide with the blocks and once this happens the block should be destroyed.
 * **Ball collision with player:** The ball should bounce when it hits the player paddle.
@@ -30,7 +30,7 @@ Create a file called **game.js** inside the **js folder** and lets begin coding.
 
 ### Changing index.html
 
-Now that we have **game.js** ready we need to change our **index.html** file to include it.
+We need to change our **index.html** file to include **game.js**.
 
 {lang="js", title="index.html: now includes our game state", line-numbers=on}
 ~~~~~
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function()  {
 });
 ~~~~~~~~
 
-## Initializing our world
+## Initializing Our World
 
 [Phaser Game States](http://docs.phaser.io/Phaser.State.html) as explained in the [initialization chapter](#initialization) have different functions that we can implement to suite our game loop workflow. To initialize the world we'll implement the ```create()``` function that is run once when the state starts. We're not going to implement this initialization as a single continuous block of code because it will be tedious and harder to understand. Instead we're going to build tiny functions that will be called from ```create()```.
 
@@ -103,7 +103,7 @@ GameStates.Game = {
 };
 ~~~~~
 
-Above we can see an example of how our coding works. We create a function in this case ```initWorld()``` and then we call it from ```create()```. This ```initWorld()``` is responsible for setting some constants and adding the background image. These constants are used by the functions we'll call on ```update()``` to simulate the world.
+Above we can see an example of how our coding works. We created a function called ```initWorld()``` and then we call it from ```create()```. This ```initWorld()``` is responsible for setting some constants and adding the background image. These constants are used by the functions we'll call on ```update()``` to simulate the world.
 
 From now on, instead of pasting the whole **game.js** file, I am going to place just the new function that you should add and in the end how the 
 ```create()``` should look.
@@ -134,13 +134,13 @@ addPlayer: function () {
 
 This function is used to add the player sprite to the world. Sprites are the little things that are moving and interacting with the world, all the rest is background and information display. You can learn more about sprites by checking [the Phaser Sprite Class documentation](http://docs.phaser.io/Phaser.Sprite.html).
 
-We're creating a sprite using the image called __player__ that was loaded in our **Preload** game state. This sprite is on a specific position (160x440) and we're storing it in the object in a property called **player**. If you're not confident about the usage of ```this``` inside an object then check out [the MDN documentation about **this**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this). Basically since the game state is an object and we're storing the player as a property of this object then the player is available to be used in the other functions.
+We're creating a sprite using the image called __player__ that was loaded in our **Preload** game state. This sprite is on a specific position (160x440) and we're storing it in the object property called **player**. If you're not confident about the usage of ```this``` inside an object then check out [the MDN documentation about **this**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this). Basically since the game state is an object and we're storing the player as a property of this object then the player is available to be used in the other functions.
 
-After adding the sprite, we're enabling the physics system on the player. When working with mobile devices you don't want to simulate physics on stuff you don't need and waste battery and CPU. Because of this, we need to tell the physics system about all sprites that it should care about.
+After adding the sprite, we're enabling the physics system to act on the player sprite. When working with mobile devices you don't want to simulate physics on stuff you don't need and waste battery and CPU. Because of this, we need to tell the physics system about all sprites that it should care about.
 
 Phaser comes with three different physics systems ranging from simple arcade like physics to full blown simulations similar to Box2D. Our game doesn't require that amount of simulation and should be just fine with arcade physics. Thats why we're using ```this.physics.arcade``` and not the other systems. You can check more about the arcade physics at [the Phaser Arcade Physics documentation](http://docs.phaser.io/Phaser.Physics.Arcade.html).
 
-Another useful thing is to change the anchor point of the player sprite. Normally sprite anchor coordinates start from the top left corner and its a lot easier to position stuff if we change the anchor to the middle of the sprite. this way if we want to center a sprite on the screen when can position it directly on the center coordinate instead of picking the center and subtracting it by half of the length of the sprite which would be the steps needed if we could not change the anchor point.
+The next command change the anchor point of the player sprite. Normally sprite anchor coordinates start from the top left corner and its a lot easier to position stuff if we change the anchor to the middle of the sprite. This way if we want to center a sprite on the screen we can position it directly on the center coordinate instead of picking the center and subtracting it by half of the length of the sprite which would be the steps needed if we could not change the anchor point.
 
 The next three statements are related to the physics system. For things to be able to interact with one another in terms of physics they need to have a body, things with no body (and thus no mass) can't interact. We're also setting the body to immovable because if we didn't then each time the ball hits the paddle the paddle would move down and we don't want that. The last statement is to make sure the paddle doesn't leave the screen.
 
@@ -193,7 +193,7 @@ addBlocks: function () {
 
 The blocks are a bit different because instead of making each block an independent sprite we're using a group. Groups are useful when you have many of the same entity in a game such as bullets. It will be a lot easier to check collisions with a group because we can do a single check against the group instead of checking each sprite individually.
 
-First we create a new group and store it in a property called group. You can learn more about groups at [the Phaser Group documentation](http://docs.phaser.io/Phaser.Group.html). We use a nested loop to build our rows and columns (a.k.a. our grid of blocks). In this loop we calculate the position of the given block and create a temporary sprite to hold it. We then add this sprite to the group after setting the needed physics stuff on it.
+First we create a new group and store it in a property called blocks. You can learn more about groups at [the Phaser Group documentation](http://docs.phaser.io/Phaser.Group.html). We use a nested loop to build our rows and columns (a.k.a. our grid of blocks). In this loop we calculate the position of the given block and create a temporary sprite to hold it. We then add this sprite to the group after setting the needed physics stuff on it.
 
 ### The create() function
 
@@ -216,11 +216,11 @@ With that done, the initialization is ready. If we run our game now we'd see a s
 
 ## Simulating The World
 
-This is the part where we code the simulation part. In this part we need to take care of moving the ball and colliding with stuff. One could thing is that thanks to the physics system we don't need to compute the ball position. In the ```addBall()``` function we add a initial velocity and bounciness so in each ```update()``` call the physics system will calculate the new position and collision with the world bounds on its own, we don't need to do anything. The ball collisions with the blocks and the player need to be implemented by us.
+This is the part where we code the simulation part. In this part we need to take care of moving the ball and colliding with stuff. One thing is that thanks to the physics system we don't need to compute the ball position. In the ```addBall()``` function we add its initial velocity and bounciness so that in each ```update()``` call the physics system will calculate its new position and collision with the world bounds on its own, we don't need to do anything. The ball collisions with the blocks and the player need to be implemented by us though.
 
 ### Colliding with blocks
 
-We're going to use two functions to check collisions with blocks. One is the check itself that we'll be called from ```update()``` the other is a callback that will be called by the physics system if the collision is true. First lets build the check.
+We're going to use two functions to check collisions with blocks. One is the check itself that will be called from ```update()```. The other is a callback that will be called by the physics system if the collision is true. First lets build the check.
 
 {lang="js", title="game.js: the checkHitWithBlocks() function", line-numbers=on}
 ~~~~~
@@ -229,7 +229,7 @@ checkHitWithBlocks: function () {
 }
 ~~~~~
 
-Colliding stuff is very easy using the Arcade Physics engine in Phaser. You just call ```this.game.physics.arcade.collide()``` passing the sprite you want to check as the first parameter, the what should the sprite be colliding with which can be a group or a sprite, in this case we're checking against all members of the group and the third parameter is the callback that will be triggered if that is true.
+Colliding stuff is very easy using the Arcade Physics engine in Phaser. You just call ```this.game.physics.arcade.collide()``` passing the sprite you want to check as the first parameter, the what should the sprite be colliding with which can be a group or a sprite, in this case we're checking against all members of the blocks group and the third parameter is the callback that will be triggered if there is a collision.
 
 {lang="js", title="game.js: the checkHitWithBlocks() function", line-numbers=on}
 ~~~~~
@@ -320,7 +320,7 @@ A> The code for this chapter is on [Appendix 5: Gameloop Chapter Code](#appendix
 
 ### What about controlling the player?
 
-We're devoting the next chapter to the business of game controls. This was done because this chapter was too long and there is too much to talk about the topic even though the implementation will be trivial.
+We're devoting the next chapter to the business of game controls. This was done because this chapter was too long and there is too much to talk about.
 
 ## Summary 
 

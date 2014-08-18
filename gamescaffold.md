@@ -2,9 +2,9 @@
 
 ![This Foxnoid looks much better than the sketch from previous chapter](images/originals/foxnoid-placeholders.png)
 
-In this book we're focusing on the task of building a game but if you'd like to dive deeper into Firefox OS app development then you should download the Free and Open Source book [Quick Guide For Firefox OS Development](https://leanpub.com/quickguidefirefoxosdevelopment/) or just read it online, specially the chapter about [basic concepts](https://leanpub.com/quickguidefirefoxosdevelopment/read#concepts).
+Firefox OS applications are a collection of HTML, CSS and Javascript files. While most business applications deal with all these three technologies, mobile web based game development tend to use much more Javascript than HTML and CSS because they tend to be based in Canvas or WebGL due to performance reasons. To build games we're going to use the [powerful Canvas API](https://developer.mozilla.org/en-US/docs/Web/HTML/Canvas) to display 2D graphics and [Touch Events API](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Touch_events) for input. We'll just use some HTML and CSS boilerplate to initialize things and then all the magic happens in Javascriptland.
 
-Firefox OS applications are a collection of HTML, CSS and Javascript files. While most business applications deal with all these three technologies, mobile web based game development tend to use much more Javascript than HTML and CSS because they tend to be based in Canvas or WebGL due to performance reasons. To build games we're going to use the [powerful Canvas API](https://developer.mozilla.org/en-US/docs/Web/HTML/Canvas) to display 2D graphics, [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) for audio and [Touch Events API](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Touch_events) for input. We're just using some HTML and CSS boilerplate to initialize things and then all the magic happens in Javascript land.
+A> **PSA:** In this book we're focusing on the task of building a game but if you'd like to dive deeper into Firefox OS app development then you should download the Free and Open Source book [Quick Guide For Firefox OS Development](https://leanpub.com/quickguidefirefoxosdevelopment/) or just read it online, specially the chapter about [basic concepts](https://leanpub.com/quickguidefirefoxosdevelopment/read#concepts).
 
 ## Application Types
 
@@ -15,7 +15,7 @@ Firefox OS currently has two types of applications: hosted apps and packaged app
 
 There are Pros and Cons to using each type. Games tend to use a lot of static resources such as image and sound files. If you use a hosted app then your user will need to download and cache all these files before playing. If instead you opt for a packaged app then all the static resources are bundled and copied to the device when the application is installed so there won't be a need to download anything after the initial installation.
 
-In this book we'll use a packaged app approach. Its easier to develop since we don't have to deal with cache and cache invalidation and the user doesn't have to wait for things to load after the installation.
+In this book we'll use a packaged app approach. Its easier to develop since we don't have to deal with cache and cache invalidation and the user doesn't have to wait for things to load over the internet after the installation.
 
 ## The Application Manifest
 
@@ -65,7 +65,7 @@ As explained above we're not going to do a lot of CSS and DOM. This game is just
 
 Some games are better written with DOM others we'll do pretty fine with Canvas. You can think of a canvas as a Television where image will be displayed. Programming with canvas is closer to building games for old DOS and Gameboys then structuring hypertext with HTML.
 
-We're going to change this HTML as the chapters go on but for now, create a file called **index.html** with the following content:
+We're going to change this HTML as we move thru the chapters but for now, create a file called **index.html** with the following content:
 
 <<[Minimal index.html](code/foxnoid/index.html)
 

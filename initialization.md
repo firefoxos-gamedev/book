@@ -1,6 +1,6 @@
 # Initializing Foxnoid {#initialization}
 
-In this chapter we're going to learn how to start our game. This may sound simple and silly but this book takes baby steps and tries to explain why we're doing things instead of just dumping a bunch of code that you'll use without understanding. I believe that programming is the act of organizing complexity. You can only organize something if you actually understand whats going on, without understanding organizing stuff becomes a game of blindfolded sokoban[^sokoban].
+In this chapter we're going to learn how to start our game. This may sound simple and silly but this book takes small steps and tries to explain why we're doing things instead of just dumping a bunch of code that you'll use without understanding. I believe that programming is the act of organizing complexity. You can only organize something if you actually understand whats going on. Without understanding, organizing stuff becomes a game of blindfolded sokoban[^sokoban].
 
 [^sokoban]: A transport puzzle game. Learn more about it at [its wikipedia page](en.wikipedia.org/wiki/Sokoban).
 
@@ -10,7 +10,7 @@ Before talking about game initialization we need to backpedal a bit and understa
 
 You can think about the game lifecycle from a birds eye view. In that case a game is something you launch, play and eventually close. So from this broad picture you can think of three stages in the game playing process. The game is launching, playing or closing. Each of these states can be further organized into smaller states.
 
-If we were an eagle soaring high and could use the cheating eyes that nature gave us then we could **zoom** into these game states and see what they are composed of. Since we're not eagles then I am going to use an analogy to explain this thing. Lets thing of a game as if it was a dinner out of home.
+If we were an eagle soaring high and could use the cheating eyes that nature gave us then we could **zoom** into these game states and see what they are composed of. Since we're not eagles I am going to use an analogy to explain this thing. Lets thing of a game as if it was a dinner out of home.
 
 ## Game States
 
@@ -20,11 +20,11 @@ First step is entering the restaurant, being seated and ordering food. This is s
 
 Second step happens in the kitchen. The cook needs to have the ingredients ready so that your order can be prepared. Ingredients are assets that need to be there or the food can't be prepared correctly. Imagine a cook running to and from a super market while your order is prepared, I assure you it will be the last time you have dinner in that place.
 
-In a game assets are all the resources such as images, sounds and auxiliary files that need to be loaded before the game is playable. We've all seen web pages loading stuff while displaying stuff. You get a lot of relayout, reflows and repaints operation. We learned not to care much about it but imagine if this happened in a game of Super Mario, you're there trying to play while the level and enemies are still loading. That leads to a poor experience.
+In a game, assets are all the resources such as images, sounds and auxiliary files that need to be loaded before the game is playable. We've all seen web pages loading stuff while displaying stuff. You get a lot of relayouts, reflows and repaints operations. We learned not to care much about it but imagine if this happened in a game of Super Mario and you're there trying to play while the level and enemies are still loading. That leads to a poor experience.
 
 Third step is preparing your food. With the assets available, the cook can work the magic and deliver a nice plate. This is where your game uses all the needed resources to initialize the game itself. Following our Super Mario example, this is loading the maps and building the level.
 
-Fourth step is having dinner! This is the fun step, so this is also our game playing step.
+Fourth step is having dinner! This is the fun step. (a.k.a.: our game playing step).
 
 Fifth step, dinner is over and you're going home. This is when the user decides its time to go and closes your game.
 
@@ -40,9 +40,9 @@ If you're building a game such as Super Mario you could have a different state f
 
 Phaser has game state features as we can see in the [documentation for the State Class](http://docs.phaser.io/Phaser.State.html). Each state can be self contained and handle its own asset loading, working and switching to a different state. Basically each state can be its own tiny assembly line.
 
-A Phaser state is a Javascript object that has methods you can override to handle each of the steps mentioned in our restaurant analogy. For example if you want to load assets you will do it in the ```preload()``` function of that state. If you want to assemble the game level and build the screen you're displaying you will do it in the ```create()``` function. The food eating/game playing happens in the ```update()``` function and so on.
+A Phaser state is a Javascript object that has methods you can override to handle each of the steps mentioned in our restaurant analogy. For example if you want to load assets you will do it in the ```preload()``` function of that object. If you want to assemble the game level and build the screen you're displaying you will do it in the ```create()``` function. The food eating/game playing happens in the ```update()``` function and so on.
 
-We're going to talk much more about game states as we build Foxnoid. Since we're talking about Foxnoid now...
+We're going to talk much more about game states as we build Foxnoid.
 
 ### Foxnoid game states
 
@@ -58,11 +58,11 @@ Foxnoid is a game in the tradition of Arkanoid. Its a classic arcade game like P
 
 As you can see we're going to have four states in Foxnoid. The first one will load our assets and then switch to the game. The user will play the game and depending on the outcome we'll switch to Game Win or Game Over state.
 
-The remaining of this chapter we'll be about what should happen before we're able to switch to the **preload** state. There is some initialization that needs to be done prior to start loading assets.
+The remaining of this chapter we'll be about what should happen before we're able to switch to the **Preload** state. There is some initialization code that needs to be done prior to start loading assets.
 
 ## What Should Our Initialization Handle?
 
-Out initialization code should handle everything that is needed before we can start switching between the states. It should load all libraries needed for our game to work (in our case just Phaser) and initialize them. The rest is up to each state.
+Out initialization code should handle everything that is needed before we can start switching between states. It should load all libraries needed for our game to work (in our case just Phaser) and initialize them. The rest is up to each state.
 
 ## Initializing Phaser
 
@@ -92,11 +92,11 @@ On line 01 we create an empty object. This will be used to hold all our game sta
 
 A>**Disclaimer:** Yes, I could use an immediate function and have no globals at all but this is a beginner oriented book and I don't want lose precious pages explaining about closures and nameless functions that invoke themselves. 
 A>
-A>That being said, those that understand those features can clearly see how easy it would be to use them here. Just surround that init file and be happy. For those that have no clue what I am talking about but would like to know more then check out [Appendix 2: Javascript Books](#jsbooks) for some reference material.
+A>That being said, those that understand those features can clearly see how easy it would be to use them here. Just surround that init file and be happy. For those that have no clue what I am talking about but would like to know more then check out [Appendix 2: Javascript Books](#jsbooks) for some quality JS reference material.
 
 From line 03 to 17 we have the ```DOMContentLoaded``` event handler function. This will be executed once all the DOM is loaded. Its inside this handler that our game initialization happens. At this moment, initializing our game is basically loading Phaser and instantiating the the ```game``` variable. This game variable is the main object that is used to access the features from Phaser. You can learn more about it at [the documentation for the Phaser Game Class](http://docs.phaser.io/Phaser.Game.html).
 
-We call ```Phaser.Game()``` on line 14 passing four parameters to it. The first two are the dimensions for the canvas used in our game. We can think of it as the size of our desired screen. Phaser can work with both Canvas and WebGL renderers but the later is not well supported on mobile devices so for casual 2D games, I recommend sticking with Canvas. The fourth parameter is the id of the DOM element that will hold the canvas. Once that line is executed Phaser will initialize a canvas object inside the element specified. 
+We call ```Phaser.Game()``` on line 14 passing four parameters to it. The first two are the dimensions for the canvas used in our game. We can think of it as the size of our desired screen. Phaser can work with both Canvas and WebGL renderers but the later is not well supported on mobile devices so for casual 2D games I recommend sticking with Canvas. The fourth parameter is the id of the DOM element that will hold the canvas. Once that line is executed Phaser will initialize a canvas object inside the element specified. 
 
 Even though we created the **init.js** file, we haven't included it on our **index.html** file yet. Lets do it.
 
@@ -119,7 +119,7 @@ Even though we created the **init.js** file, we haven't included it on our **ind
 </html>
 ~~~~~
 
-If we open our **index.html** on our browser now, we'll see a black screen. Thats the canvas working but since it has nothing to do it stays black.
+If we open our **index.html** on our browser now, we'll see a black screen. Thats the canvas working but since it has nothing to do, it stays black.
 
 ![Black screen means good](images/originals/initialization/black.png)
 
